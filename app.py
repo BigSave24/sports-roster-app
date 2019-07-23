@@ -24,12 +24,6 @@ def teamList():
         list_team.append(i['full_name'])
     return list_team
 
-def playerList(teamName):
-    onRoster = []
-    for p in playerData['data']:
-        if p['team']['full_name'] == teamName:
-            onRoster.append(p)
-
 
 # App Routes
 # Method for Displaying Home and Team Nav Menu
