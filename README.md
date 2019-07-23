@@ -26,4 +26,5 @@ The following software is needed to run this project:
    - `static folder` Folder housing CSS
    - `README.md` README documentation
 
-### Open a browser window
+### Open a browser and navigate to website
+https://aqueous-sands-99531.herokuapp.com/
