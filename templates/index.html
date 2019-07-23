@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SportsRosterApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title">NBA Sports Roster App</h1>
+      <hr>
+      <div class="col-left sideNav">
+        <nav class="navbar">
+          <ul class="navbar-nav">
+            {% for team in teams %}
+            <li class="nav-item">
+              <a class="nav-link" href='{{url_for('playerList', teamName=team)}}'> {{ team }} </a>
+            </li>
+          </ul>
+          {% endfor %}
+        </nav>
+      </div> <!-- End Col-Left -->
+      <div class="col-right rosterdisplay">
+        <img src="http://www.toca-ch.com/data/walls/289/33949767.gif" alt="basketball hoop image">
+      </div>
+      <footer id="footer">
+        <div class="home-icon">
+          <a href='{{url_for('teamMenu')}}'>
+            <i class="fa fa-home" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="foot-notes">
+          Created by:<span> Kevin Edmond</span>
+        </div>
+      </footer>
+    </div> <!-- End Container -->
+  <body>
+</html>
