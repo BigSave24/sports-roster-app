@@ -105,9 +105,12 @@ time, mark, audio, video {
 
 .player {
   padding: 10px 0 20px 50px;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   text-decoration: none;
   list-style: none;
+	display: inline-block;
+	width: 45%;
+	font-size: 1rem;
 }
 
 #footer {
@@ -135,3 +138,49 @@ time, mark, audio, video {
   font-weight: 600;
   color: #00bcd4;
 }
+
+@media only screen and (max-width: 1114px){
+	.col-left {
+    height: 90vh;
+	}
+	.col-right {
+    height: 90vh;
+	}
+}
+
+@media (min-width: 550px) and (max-width: 992px){
+	body {
+	  min-width: 550px;
+	}
+	.container {
+	  min-width: 550px;
+	}
+	.col-left {
+    height: 20vh;
+		display: block;
+    float: none;
+    width: 100%;
+		text-align: center;
+	}
+	.navbar {
+    text-align: center;
+	}
+	.nav-item {
+    font-size: 1.4rem;
+	}
+	.col-right {
+    height: auto;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	.rosterdisplay img {
+    width: 50%;
+    height: 50%;
+    position: relative;
+	}
+}
+
+/* @media only screen and (max-width: 768px){}
+
+@media only screen and (max-width: 600px){} */
