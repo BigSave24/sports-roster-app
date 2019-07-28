@@ -52,11 +52,11 @@ def teamMenu():
 # Method for Displaying Selected Team's Roster
 @app.route('/show/<teamName>')
 def playerList(teamName):
-    getRoster = playerData
+    p_length = len(playerData)
     onRoster = []
-    for p in range(len(getRoster)):
-        if getRoster[p]['team']['full_name'] == teamName:
-            onRoster.append(getRoster[p])
+    for p in range(p_length):
+        if playerData[p]['team']['full_name'] == teamName:
+            onRoster.append(playerData[p])
             if len(onRoster) == 18:
                 break
     return render_template('show.html', teams=teamList(), players=onRoster, currentTeam=teamName)
