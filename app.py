@@ -57,7 +57,6 @@ def teamMenu():
 # Method for Displaying Selected Team's Roster
 @app.route('/show/<teamName>')
 def playerList(teamName):
-    playerData
     p_length = len(playerData)
     onRoster = []
     for p in range(p_length):
