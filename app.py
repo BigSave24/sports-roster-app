@@ -3,11 +3,16 @@ from flask import (Flask, render_template, request, redirect, url_for, flash, js
 from flask import session as loginSession, make_response
 import json
 import requests
+import sys
+import logging
 
 
 app = Flask(__name__)
 Application_Name = "Sports Roster App"
 
+###### Application Logging Info
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 ###### Establish Connection to API Source
 # Get Team API data
