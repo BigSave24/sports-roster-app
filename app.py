@@ -37,6 +37,7 @@ def getPlayerData():
 # Placeholder for returned player API data
 playerData = getPlayerData()
 
+
 # Filter team API data for navbar
 def teamList():
     try:
@@ -52,14 +53,15 @@ def teamList():
 # Method for Displaying Homepage and Team Nav Menu
 @app.route('/')
 def teamMenu():
+    print(type(playerData))
     return render_template('index.html', teams=teamList())
 
 # Method for Displaying Selected Team's Roster
 @app.route('/show/<teamName>')
 def playerList(teamName):
-    p_length = len(playerData)
+    print(type(playerData))
     onRoster = []
-    for p in range(p_length):
+    for p in range(3109):
         if playerData[p]['team']['full_name'] == teamName:
             onRoster.append(playerData[p])
             if len(onRoster) == 18:
