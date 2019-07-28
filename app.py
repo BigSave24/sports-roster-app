@@ -27,10 +27,10 @@ def getPlayerData():
             url = "https://www.balldontlie.io/api/v1/players?per_page=100&page=" + str(pg_num)
             r = requests.get(url)
             r_json = r.json()
-            playerResults = playerResults + r_json['data']
+            playerResults = playerResults + (r_json['data'])
         return playerResults
     except Exception as e:
-        print("This is a Player Data error!")
+        print("This is a Player Data error!", e)
 
 
 ###### Assist Functions
@@ -52,12 +52,12 @@ def teamList():
 # Method for Displaying Homepage and Team Nav Menu
 @app.route('/')
 def teamMenu():
-    getPlayerData()
     return render_template('index.html', teams=teamList())
 
 # Method for Displaying Selected Team's Roster
 @app.route('/show/<teamName>')
 def playerList(teamName):
+    playerData
     p_length = len(playerData)
     onRoster = []
     for p in range(p_length):
