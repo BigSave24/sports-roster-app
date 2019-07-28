@@ -23,7 +23,7 @@ teamData = t.json()
 def getPlayerData():
     playerResults = []
     try:
-        for pg_num in range(1, 33):
+        for pg_num in range(1, 32):
             url = "https://www.balldontlie.io/api/v1/players?per_page=100&page=" + str(pg_num)
             r = requests.get(url)
             r_json = r.json()
@@ -52,6 +52,7 @@ def teamList():
 # Method for Displaying Homepage and Team Nav Menu
 @app.route('/')
 def teamMenu():
+    getPlayerData()
     return render_template('index.html', teams=teamList())
 
 # Method for Displaying Selected Team's Roster
