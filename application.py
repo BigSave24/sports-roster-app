@@ -7,12 +7,12 @@ import sys
 import logging
 
 
-app = Flask(__name__)
-Application_Name = "Sports Roster App"
+application = Flask(__name__)
+application_Name = "Sports Roster App"
 
-###### Application Logging Info
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
+# ###### Application Logging Info
+application.logger.addHandler(logging.StreamHandler(sys.stdout))
+application.logger.setLevel(logging.ERROR)
 
 ###### Establish Connection to API Source
 # Get Team API data
@@ -30,7 +30,7 @@ def getPlayerData():
             playerResults = playerResults + (r_json['data'])
         return playerResults
     except Exception as e:
-        print("This is a Player Data error!", e)
+        print("A Player Data error has occured!", e)
 
 
 ###### Assist Functions
@@ -51,23 +51,21 @@ def teamList():
 
 ###### App Routes
 # Method for Displaying Homepage and Team Nav Menu
-@app.route('/')
+@application.route('/')
 def teamMenu():
-    print(type(playerData))
     return render_template('index.html', teams=teamList())
 
 # Method for Displaying Selected Team's Roster
-@app.route('/show/<teamName>')
+@application.route('/show/<teamName>')
 def playerList(teamName):
-    print(type(playerData))
     onRoster = []
     for p in range(3109):
         if playerData[p]['team']['full_name'] == teamName:
             onRoster.append(playerData[p])
-            if len(onRoster) == 18:
+            if len(onRoster) == 15:
                 break
     return render_template('show.html', teams=teamList(), players=onRoster, currentTeam=teamName)
 
 
 if __name__ == '__main__':
-    app.run()
+    application.run()
