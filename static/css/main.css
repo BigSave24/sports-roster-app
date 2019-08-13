@@ -139,7 +139,7 @@ time, mark, audio, video {
   color: #00bcd4;
 }
 
-@media only screen and (max-width: 1114px){
+@media (min-width: 993px) and (max-width: 1114px){
 	.col-left {
     height: 90vh;
 	}
@@ -148,12 +148,12 @@ time, mark, audio, video {
 	}
 }
 
-@media (min-width: 550px) and (max-width: 992px){
+@media only screen and (max-width: 992px){
 	body {
-	  min-width: 550px;
+	  min-width: 500px;
 	}
 	.container {
-	  min-width: 550px;
+	  min-width: 500px;
 	}
 	.col-left {
     height: 20vh;
